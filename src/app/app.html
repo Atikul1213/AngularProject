@@ -1,8 +1,9 @@
-<h2>Hello Angular 22</h2>
-<h2>Atikul Islam</h2>
-<h2>{{title()}}</h2>
-<h2>{{name}}</h2>
-<h2>{{10+3}}</h2>
-<h2>Come from func: {{getName()}}</h2>
-<h2>Sum: {{getSum(10, 3)}}</h2>
-<app-login></app-login>
+<div style="text-align: center;">
+    <h1>Counter App</h1>
+    <h2 class="count">{{count}}</h2>
+    <div>
+        <button (click)="Inc()" class="btn bg-red">Increment</button>
+        <button (click)="Reset()" class="btn bg-black">Reset</button>
+        <button (click)="Dec()" class="btn bg-green">Decrement</button>
+    </div>
+</div>
