@@ -1,0 +1,95 @@
+<h1>Event in Angular</h1>
+<button class="btn" name="login" (click)="handleEvent($event)">Click Event</button>
+<br> <br>
+
+<div  (mouseenter)="handleEvent($event)"
+style="background-color: green;width:100px;height:100px;"> 
+</div>
+
+<div  (mouseleave)="handleEvent($event)"
+style="background-color: blue;width:100px;height:100px;"> 
+</div>
+<br> 
+<input type="text" (focus)="handleEvent($event)" placeholder="Focus Event">
+<br> 
+<input type="text" (blur)="handleEvent($event)" placeholder="Blur Event">
+<br> 
+<input type="text" (input)="handleEvent($event)" placeholder="Input Event">
+<br>    
+<input type="text" (keyup)="handleEvent($event)" placeholder="Keyup Event">
+<br>
+<input type="text" (keydown)="handleEvent($event)" placeholder="Keydown Event">
+
+<br> <br> <br> <br>
+<h2>UserName: {{name}}</h2>
+<h2>User Name : {{displayName}}</h2>
+<input type="text" (input)="getName($event)"  value="{{name}}" placeholder="Enter your name">
+<button (click)="showName()">Show Name</button>
+<br> <br> <br> 
+
+<h2> If Else | Condition Flow </h2>
+
+<button (click)="onChange()">Toggle Display</button>
+
+@if(display){
+    <div style="width: 200px; height:200px; background-color: green;">
+    </div>
+}
+
+<br><br>
+ <button (click)="toggleColor()">Toggle Color</button>
+
+@if(changeColor){
+    <div style="width: 200px; height:200px; background-color: red;">
+    </div>
+}
+@else{
+    <div style="width: 200px; height:200px; background-color: blue;">
+    </div>
+}
+
+<br><br>
+<h1>Else if | Control flow</h1>
+<button (click)="changeColorBtn()">ChangeColor</button>
+@if(color==1){
+    <div style="width: 200px; height:200px; background-color: red;">
+    </div>
+}
+@else if(color==2){
+    <div style="width: 200px; height:200px; background-color: green;">
+    </div>
+}
+@else if (color==3) {
+    <div style="width: 200px; height:200px; background-color: blue;">
+    </div>
+}
+@else {
+    <div style="width: 200px; height:200px; background-color: yellow;">
+    </div>
+}
+  
+
+<br><br>
+<h1>Switch Case | Control Flow</h1>
+
+
+@switch(color){
+    @case(1){
+        <div style="width: 200px; height:200px; background-color: red;">
+        </div>
+    }
+    @case(2){
+        <div style="width: 200px; height:200px; background-color: green;">
+        </div>
+    }
+    @case(3){
+        <div style="width: 200px; height:200px; background-color: blue;">
+        </div>
+    }
+    @default{
+        <div style="width: 200px; height:200px; background-color: yellow;">
+        </div>
+    }
+}
+
+<br><br><br><br>
