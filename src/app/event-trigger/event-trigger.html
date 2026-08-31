@@ -92,4 +92,29 @@ style="background-color: blue;width:100px;height:100px;">
     }
 }
 
+<br><br>
+<h1>For Loop | Control Flow</h1>
+@for(user of users; track users; let idx=$index){
+    <ul>
+        <li>
+            <h2>Id: {{idx+1}}    Name: {{user.name}}  age: {{user.age}} 
+             <button (click)="getStudentName(user.name)">getName</button>
+            </h2>
+        </li>
+    </ul>
+}
+
+
+<br><br>
+<h1>Signal</h1>
+<h2>Count:= {{count()}}</h2> 
+<h2>x:= {{x}}</h2>
+
+<button (click)="updateValue('inc')">Update value</button>
+<button (click)="updateValue('dec')">Decrease value</button>
+<br>
+<button (click)="count.set(count()+1)">Update value</button>
+<button (click)="count.set(count()-1)">Decrease value</button>
+
+
 <br><br><br><br>
