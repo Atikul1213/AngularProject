@@ -1,4 +1,4 @@
-import { Component, signal , effect} from '@angular/core';
+import { Component, signal , effect, WritableSignal, computed} from '@angular/core';
 
 @Component({
   selector: 'app-event-trigger',
@@ -71,6 +71,36 @@ export class EventTrigger {
         this.x = this.x - 1;
     }
   }
+
+   data: WritableSignal<number | string>  = signal<number|string>(10);
+   UpdateData(){
+      this.data.set("Atikul Islam");
+   }
+   
+   a=signal(10);
+   b = signal(20);
+   sum = computed(() => this.a() + this.b());
+
+   showSum(){
+    alert("before Sum: "+this.sum());
+    this.a.set(100);
+    alert("after sum: "+this.sum());
+   }
+
+   userName = signal("Atikul Islam");
+   constructor1(){
+      effect(()=>{
+        alert("User name: "+this.userName()); 
+      })
+   }
+    
+  
+
+   arr=[10,20,30,40,50,60,70,80,90,100];
+   
+
+
+
 
 
 }

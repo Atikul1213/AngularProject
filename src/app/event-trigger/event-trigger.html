@@ -117,4 +117,33 @@ style="background-color: blue;width:100px;height:100px;">
 <button (click)="count.set(count()-1)">Decrease value</button>
 
 
+<h2>data: {{data()}}</h2>
+<button (click)="UpdateData()">Update Data</button>
+
+<br><br>
+<button (click)="showSum()">Show sum</button>
+
+<br><br>
+<h2>Signal Effects</h2>
+<h2>UserName: {{userName()}}</h2>
+<button (click)="userName.set('DUET Gazipur')">Update UserName</button>
+
+<br><br>
+<h2>Loop contextual variable</h2>
+@for(value of arr; track arr;let idx=$index){
+    <h5>Index: {{idx+1}}   Value: {{value}}     Isfirst: {{$first}}
+             IsLast: {{$last}}      IsEven: {{$even}}  
+            IsOdd: {{$odd}}     count: {{$count}}
+            </h5>
+}
+
+
+
+
+
+
+
+
+
+
 <br><br><br><br>
