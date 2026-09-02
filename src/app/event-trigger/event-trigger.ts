@@ -1,8 +1,10 @@
 import { Component, signal , effect, WritableSignal, computed} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
   selector: 'app-event-trigger',
-  imports: [],
+  imports: [FormsModule, NgFor, NgIf, NgSwitchCase, NgSwitch,NgSwitchDefault],
   templateUrl: './event-trigger.html',
   styleUrl: './event-trigger.css',
 })
@@ -98,6 +100,51 @@ export class EventTrigger {
 
    arr=[10,20,30,40,50,60,70,80,90,100];
    
+
+   email="default@gmail.com"
+   
+   changeEmail(event:any){
+      this.email = event.target.value;
+   }
+   
+
+
+
+   task="";
+   taskList:{id:number, task:string}[]=[];
+   addTask(){
+    this.taskList.push({
+      id:this.taskList.length+1, task: this.task
+    });
+    this.task="";
+   }
+
+   removeTask(id:number){
+    this.taskList = this.taskList.filter((item)=>item.id != id);
+   }
+
+   bgColor="red";
+  
+
+   students=[{name: "Atikul Islam", age: 25}, 
+    {name: "John Doe", age: 30}, {name: "Jane Smith", age: 28}, 
+    {name: "Michael Johnson", age: 35}, {name: "Emily Davis", age: 22}];
+
+   
+
+   showNgIf = true;
+   login = false;
+   block = 0;
+   
+   updateBlock(){
+    if(this.block >= 2) this.block = 0;
+    else this.block++;
+   }
+  
+   color2="green";
+
+
+
 
 
 

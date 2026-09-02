@@ -138,6 +138,84 @@ style="background-color: blue;width:100px;height:100px;">
 }
 
 
+<br><br>
+<h2> Two way binding</h2>
+<h2>Variable email: {{email}}</h2>
+<input [(ngModel)]="email" type="email" placeholder="Enter your email">
+<br>
+<input type="email" (input)="changeEmail($event)" placeholder="Enter your email">
+
+
+<br><br>
+<h2>To Do List</h2>
+<input [(ngModel)]="task" type="text" placeholder="Enter your task">
+<button (click)="addTask()">Add Task</button>
+
+<h1>task: {{task}}</h1>
+
+<h2>Task List</h2>
+@for(tsk of taskList; track taskList){
+    <ul>
+        <li>
+            Index: {{tsk.id}}  Task: {{tsk.task}}
+            <button (click)="removeTask(tsk.id)">Remove</button>
+        </li>
+    </ul>
+}
+<br><br>
+<h2 [style.background-color]="bgColor">Dynamic styling</h2>
+
+<br><br>
+<h2>*ngFor Directives </h2>
+<ul>
+    <li *ngFor="let student of students; let i = index">
+        Index: {{i+1}}  Name: {{student.name}}  Age: {{student.age}}
+    </li>
+</ul>
+
+<br><br>
+<h2>*ngif Directives </h2>
+
+<h2 *ngIf="showNgIf">Show Ng If directive</h2>
+
+<div *ngIf="login; else elseBlock">
+    <a href="/">Logout</a>
+</div>
+
+<ng-template #elseBlock>
+    <a href="/">Login</a>
+</ng-template>
+
+
+<div *ngIf="block==0">
+    <h3>Block 1</h3>
+</div>
+
+<div *ngIf="block==1">
+    <h3>Block 2</h3>
+</div>
+
+<div *ngIf="block==2">
+    <h3>Block 3</h3>
+</div>
+<button (click)="updateBlock()">Update block</button>
+
+
+<br><br>
+<h2>*ngSwitch Directives </h2>
+
+<div [ngSwitch]="color2">
+    <h2 *ngSwitchCase="'red'" style="background-color:red;">Red</h2>
+    <h2 *ngSwitchCase="'green'" style="background-color:green;">Green</h2>
+    <h2 *ngSwitchCase="'blue'" style="background-color:blue;">Blue</h2>
+    <h2 *ngSwitchCase="'yellow'" style="background-color:yellow;">Yellow</h2>
+    <h2 *ngSwitchCase="'purple'" style="background-color:purple;">Purple</h2>
+    <h2 *ngSwitchDefault>Default color</h2>
+</div>
+
+
+<br><br>
+<h2>Routing </h2>
 
 
 
