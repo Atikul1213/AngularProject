@@ -5,7 +5,7 @@ import { ContactComponent } from './contact/contact';
 import { PageNotFoundComponent } from './page-not-found/page-not-found';
 
 export const routes: Routes = [
-    {path:'about', component:AboutComponent},
+    {path:'about', component:AboutComponent, data:{name:'Atikul Islam', Dept:'CSE'}},
     {path:'login', component: LoginComponent},
     {path:'contact', component:ContactComponent},
     {path:'**',component:PageNotFoundComponent}

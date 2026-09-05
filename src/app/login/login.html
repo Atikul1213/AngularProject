@@ -1,1 +1,14 @@
 <p>login Page!</p>
+ 
+<a [routerLink]="['/about',{
+    name: 'Atikul Islam',
+    Dept: 'CSE'
+}]">Go to About
+</a>
+
+<br> <br>
+<button (click)="goToAbout()">Go to About</button>
+<br>
+<button (click)="goToAbout1()">Go to About1</button>
+<br><br>
+<a routerLink="/about">Go to About</a>
