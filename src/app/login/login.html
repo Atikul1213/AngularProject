@@ -12,3 +12,17 @@
 <button (click)="goToAbout1()">Go to About1</button>
 <br><br>
 <a routerLink="/about">Go to About</a>
+
+<br><br>
+<h2>User List</h2>
+<ul>
+
+    @for(user of users; track user.id){
+        <li>
+            <a routerLink="/about" [queryParams]="{ name: user.name, Dept: user.Dept }">
+                {{ user.name }}
+            </a>
+        </li>
+    }
+</ul>
+

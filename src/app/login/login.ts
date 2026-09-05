@@ -26,4 +26,18 @@ export class LoginComponent {
       }
    }]);
   }
+
+   users=[
+    { id:1,name:'Atikul Islam', Dept:'CSE', Age: 25 },
+    { id:2,name:'John Doe', Dept:'ECE', Age: 30 },
+    { id:3,name:'Jane Smith', Dept:'ME', Age: 28 },
+    { id:4,name:'Michael Johnson', Dept:'CE', Age: 35 },
+    { id:5,name:'Emily Davis', Dept:'EE', Age: 22 },
+    { id:6,name:'David Wilson', Dept:'CSE', Age: 27 },
+  ]
+
+
+
+
+
 }
