@@ -29,7 +29,7 @@
 
 
 <br><br>
-<h2>Basic of React forms</h2>
+<h2>Basic of Reactive forms</h2>
 
 <form action="" method="post">
     <input type="text" [formControl]="name" placeholder="Enter your name" >
@@ -41,3 +41,22 @@
 
 <br><br>
 <h2>Current Name: {{name.value}}   password: {{password.value}}</h2>
+
+
+<br><br>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" placeholder="Enter your name" >
+    <br>
+    <input type="password" formControlName="password" placeholder="Enter your password">
+    <br>
+    <input type="email" formControlName="email" placeholder="Enter your email">
+    <br>
+    <button >Login</button>
+    <button type="button" (click)="setValue()">Set Value</button>
+
+</form>
+
+<br><br>
+<h2>Current Name: {{name.value}}   password: {{password.value}}    Email: {{email.value}}</h2>
+

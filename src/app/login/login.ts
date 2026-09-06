@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -41,8 +42,30 @@ export class LoginComponent {
 
   name = new FormControl('Atikul Islam');
   password = new FormControl('pass123');
+  email = new FormControl('example@gmail.com');
 
   displayValue(){
     alert(`Name: ${this.name.value}, Password: ${this.password.value}`);  
   }
+
+
+  profileForm = new FormGroup({
+    name: new FormControl('Atikul Islam'),
+    password: new FormControl('pass123'),
+    email: new FormControl('example@gmail.com')
+  })
+
+  onSubmit(){
+    alert(`Form Submitted: ${JSON.stringify(this.profileForm.value)}`);
+  }
+  
+  setValue(){
+    this.profileForm.setValue({
+      name: 'John Doe',
+      password: 'newpass456',
+      email: 'john.doe@gmail.com'
+    })
+  }
+
+
 }
