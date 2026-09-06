@@ -26,3 +26,18 @@
     }
 </ul>
 
+
+
+<br><br>
+<h2>Basic of React forms</h2>
+
+<form action="" method="post">
+    <input type="text" [formControl]="name" placeholder="Enter your name" >
+    <br>
+    <input type="password" [formControl]="password" placeholder="Enter your password">
+    <br>
+    <button (click)="displayValue()" type="submit">Login</button>
+</form>
+
+<br><br>
+<h2>Current Name: {{name.value}}   password: {{password.value}}</h2>

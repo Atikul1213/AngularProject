@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [RouterLink, RouterOutlet],
+  imports: [ReactiveFormsModule, RouterLink, RouterOutlet],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -37,7 +39,10 @@ export class LoginComponent {
   ]
 
 
+  name = new FormControl('Atikul Islam');
+  password = new FormControl('pass123');
 
-
-
+  displayValue(){
+    alert(`Name: ${this.name.value}, Password: ${this.password.value}`);  
+  }
 }
