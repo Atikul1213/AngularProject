@@ -47,10 +47,15 @@
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <input type="text" formControlName="name" placeholder="Enter your name" >
+   
+    <span class="error" *ngIf="nameError?.hasError('required')">*Name is required</span>
+    <span *ngIf="nameError?.hasError('minlength')">*Name must be at least 5 characters long</span>
     <br>
     <input type="password" formControlName="password" placeholder="Enter your password">
+    <span *ngIf="passwordError?.hasError('required')">*Password is required</span>
     <br>
     <input type="email" formControlName="email" placeholder="Enter your email">
+    <span *ngIf="emailError?.hasError('required')">*Email is required</span>    
     <br>
     <button >Login</button>
     <button type="button" (click)="setValue()">Set Value</button>
@@ -59,4 +64,33 @@
 
 <br><br>
 <h2>Current Name: {{name.value}}   password: {{password.value}}    Email: {{email.value}}</h2>
+
+
+
+
+<br><br>
+<h2>Template Driven forms</h2>
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input   type="text" required ngModel name="name" placeholder="Enter your name">
+     
+    <br>
+    <input type="password" minlength="5" maxlength="10" required name="password" ngModel placeholder="Enter your password">
+    
+    <br>
+    <select name="gender" ngModel>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    <br>
+    <input type="range" min="0" max="30" name="range" ngModel>
+    <br>
+    <button >Add User</button>
+</form>
+
+<h2>userDetails name: {{userDetails.name}}</h2>
+<h2>userDetails password : {{userDetails.password}}</h2>
+<h2>userDetails gender: {{userDetails.gender}}</h2>
+<h2>userDetails range: {{userDetails.range}}</h2>
 

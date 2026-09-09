@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, RouterLink, RouterOutlet],
+  imports: [ReactiveFormsModule, NgIf,FormsModule, RouterLink, RouterOutlet],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -50,9 +52,10 @@ export class LoginComponent {
 
 
   profileForm = new FormGroup({
-    name: new FormControl('Atikul Islam'),
-    password: new FormControl('pass123'),
-    email: new FormControl('example@gmail.com')
+    name: new FormControl('Atikul Islam',[Validators.required]),
+    password: new FormControl('pass123',[Validators.required, Validators.minLength(5)]),
+    email: new FormControl('example@gmail.com',
+      [Validators.maxLength(15),Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')])
   })
 
   onSubmit(){
@@ -66,6 +69,29 @@ export class LoginComponent {
       email: 'john.doe@gmail.com'
     })
   }
+
+  get nameError(){
+    return this.profileForm.get('name');
+  }
+
+  get passwordError(){
+    return this.profileForm.get('password');
+  }
+
+  get emailError(){
+    return this.profileForm.get('email');
+  }
+
+
+
+  userDetails: any
+  addDetails(val:NgForm){
+    alert(`Form Submitted: ${JSON.stringify(val.value)}`);
+    this.userDetails = val;
+  }
+
+
+
 
 
 }
