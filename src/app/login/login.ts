@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
@@ -6,10 +6,12 @@ import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { AboutComponent } from '../about/about';
+ 
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, NgIf,FormsModule, RouterLink, RouterOutlet],
+  imports: [ReactiveFormsModule, NgIf,FormsModule, RouterLink, RouterOutlet,AboutComponent],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -91,7 +93,9 @@ export class LoginComponent {
   }
 
 
-
-
+  userName='Atikul DUET CSE'
+  onUserChange(user:string){
+    this.userName = user
+  }
 
 }

@@ -94,3 +94,14 @@
 <h2>userDetails gender: {{userDetails.gender}}</h2>
 <h2>userDetails range: {{userDetails.range}}</h2>
 
+<br><br>
+<h2>About Component</h2>
+<app-about [user]="selectedUser.value"></app-about>
+ 
+<select #selectedUser (change)="onUserChange(selectedUser.value)" name="" id="">
+    <option value="CSE">CSE</option>
+    <option value="EEE">EEE</option>
+    <option value="CE">CE</option>
+    <option value="ME">ME</option>
+
+</select>
