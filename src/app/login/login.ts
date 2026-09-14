@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
@@ -6,10 +6,16 @@ import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
+import { AboutComponent } from '../about/about';
+ 
 
 @Component({
   selector: 'app-login',
+<<<<<<< .mine
   imports: [CommonModule, ReactiveFormsModule, NgIf,FormsModule, RouterLink, RouterOutlet],
+=======
+  imports: [ReactiveFormsModule, NgIf,FormsModule, RouterLink, RouterOutlet,AboutComponent],
+>>>>>>> .theirs
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -91,11 +97,16 @@ export class LoginComponent {
   }
 
 
+<<<<<<< .mine
   
   title = "code step by step"
   date = new Date()
   amount = 10
-
-
+=======
+  userName='Atikul DUET CSE'
+  onUserChange(user:string){
+    this.userName = user
+  }
+>>>>>>> .theirs
 
 }
